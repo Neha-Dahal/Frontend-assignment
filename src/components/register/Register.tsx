@@ -6,7 +6,7 @@ interface RegisterCredentials {
   username: string;
   email: string;
   address: string;
-  phone: number;
+  phone: number | null;
   gender: string;
 }
 
@@ -15,7 +15,7 @@ const Register = () => {
     username: "",
     email: "",
     address: "",
-    phone: 0,
+    phone: null,
     gender: "",
   });
 
@@ -83,7 +83,7 @@ const Register = () => {
             type="tel"
             name="phone"
             placeholder="Enter your phone"
-            value={credentials.phone}
+            value={credentials.phone || ""}
             label="Phone *"
             onChange={onChange}
           />

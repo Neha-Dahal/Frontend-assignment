@@ -3,8 +3,8 @@ import FormInput from "../formInput";
 
 interface ProductProps {
   prod_name: string;
-  quantity: number;
-  price: number;
+  quantity: number | null;
+  price: number | null;
   remark: string;
   description: string;
 }
@@ -12,8 +12,8 @@ interface ProductProps {
 const AddProduct = () => {
   const [values, setValues] = useState<ProductProps>({
     prod_name: "",
-    quantity: 0,
-    price: 0,
+    quantity: null,
+    price: null,
     remark: "",
     description: "",
   });
@@ -62,7 +62,7 @@ const AddProduct = () => {
             type="number"
             name="quantity"
             placeholder="Enter quantity"
-            value={values.quantity}
+            value={values.quantity || ""}
             label="Quantity *"
             onChange={onChange}
           />
@@ -72,7 +72,7 @@ const AddProduct = () => {
             type="number"
             name="price"
             placeholder="Enter price"
-            value={values.price}
+            value={values.price || ""}
             label="Price *"
             onChange={onChange}
           />
