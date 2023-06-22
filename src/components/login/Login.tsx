@@ -1,4 +1,7 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import FormInput from "../formInput";
 
 import "./login.styles.css";
 
@@ -13,12 +16,16 @@ const Login = () => {
     password: "",
   });
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
     setCredentials((prevCredentials) => ({
       ...prevCredentials,
       [name]: value,
     }));
+  };
+
+  const handleFormSubmit = () => {
+    console.log(credentials.username, credentials.password);
   };
 
   const isButtonDisabled: boolean =
@@ -29,29 +36,34 @@ const Login = () => {
       <h2>Login</h2>
       <form>
         <div>
-          <label htmlFor="username">Username *</label>
-          <input
+          <FormInput
             type="text"
             name="username"
-            id="username"
             placeholder="Enter your username"
             value={credentials.username}
-            onChange={handleInputChange}
+            label="Username *"
+            onChange={onChange}
           />
         </div>
         <div>
-          <label htmlFor="password">Password *</label>
-          <input
+          <FormInput
             type="password"
             name="password"
-            id="password"
             placeholder="Enter your password"
             value={credentials.password}
-            onChange={handleInputChange}
+            label="Password *"
+            onChange={onChange}
           />
         </div>
         <div>
-          <button type="submit" disabled={isButtonDisabled}>
+          Don't have an account? <Link to="/register">Register</Link>
+        </div>
+        <div>
+          <button
+            type="submit"
+            disabled={isButtonDisabled}
+            onClick={handleFormSubmit}
+          >
             Login
           </button>
         </div>

@@ -8,21 +8,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #667db6; /* fallback for old browsers */
+  background: #667db6;
   background: -webkit-linear-gradient(
     to right,
     #667db6,
     #0082c8,
     #0082c8,
     #667db6
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #667db6,
-    #0082c8,
-    #0082c8,
-    #667db6
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  );
+  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
 }
 .container {
   width: 320px;
@@ -64,6 +58,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 16px;
 }
 button:hover {
   background-color: #2e8b57;
