@@ -30,9 +30,10 @@ function GetProduct() {
         ) : (
           myProducts.map((item) => (
             <div key={item.id} className="product-card">
-              <h2 className="prod-title">{item.prod_name}</h2>
-              <span className="prod-details">{item.price}</span>
-              <span>{item.description}</span>
+              <h2 className="prod-title">
+                {item.id}. {item.prod_name}
+              </h2>
+              <span className="prod-details">Rs.{item.price}</span>
             </div>
           ))
         )}
