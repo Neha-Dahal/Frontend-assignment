@@ -19,7 +19,7 @@ function Router() {
         <Route path="register" element={<RegisterPage />} />
 
         <Route path="products/addProduct" element={<AddProductPage />} />
-        <Route path="products/getProducts" element={<GetProductPage />} />
+        <Route path="products" element={<GetProductPage />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>

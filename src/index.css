@@ -41,6 +41,11 @@ h2 {
   color: #0082c8;
 }
 
+.home-links {
+  margin-left: 20px;
+  color: #ccc;
+}
+
 label {
   display: block;
   margin-bottom: 8px;
@@ -100,4 +105,3 @@ button:disabled {
   text-align: left;
   margin-bottom: 8px;
 }
-
