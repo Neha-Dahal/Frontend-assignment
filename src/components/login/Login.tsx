@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import FormInput from "../formInput";
 
-import "./login.styles.css";
 
 interface LoginCredentials {
   username: string;
